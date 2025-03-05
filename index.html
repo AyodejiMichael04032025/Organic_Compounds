@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="keywords" content="Organic Compounds">
+    <meta name="Website to Learn about Organic Chemistry" content="Website for browsing about organic compounds">
+    <meta name="author" content="Ayodeji Michael">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Organic Compounds</title>
+    <link rel="stylesheet" href="Style.css"><style>
+        .image-container {
+          display: flex;
+          gap: 20px;
+        }
+        body{
+            width: 100%;
+        }
+        .image-container img {
+          width: 10%;
+          height: 10%;
+        }
+      </style>
+    
+
+</head>
+<body>
+    <style>
+    .search-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        background-color:none;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    #compound-search {
+        padding: 10px;
+        font-size: 16px;
+        border: none;
+        border-radius: 5px 0 0 5px;
+        width: 300px;
+    }
+    
+    #search-button {
+        padding: 10px 20px;
+        font-size: 16px;
+        border: none;
+        border-radius: 0 5px 5px 0;
+        background-color: #007bff;
+        color: white;
+        cursor: pointer;
+    }
+    
+    #search-button:hover {
+        background-color: #0056b3;
+    }
+    
+    #compound-results {
+        margin-top: 20px;
+        padding: 20px;
+        background-color: #f0f0f0;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    
+    .ai-suggestion {
+        position: absolute;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        padding: 5px;
+        display: none;
+    }
+    
+    .ai-suggestion ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .ai-suggestion li {
+        padding: 5px;
+        border-bottom: 1px solid #ddd;
+        cursor: pointer;
+    }
+    
+    .ai-suggestion li:hover {
+        background-color: #f0f0f0;
+    }
+</style>
+
+<script>
+    const searchInput = document.getElementById('compound-search');
+    const searchButton = document.getElementById('search-button');
+    const suggestionsContainer = document.createElement('div');
+    suggestionsContainer.className = 'ai-suggestion';
+    document.body.appendChild(suggestionsContainer);
+    
+    // Simulated AI suggestions
+    const aiSuggestions = [
+        'Glucose',
+        'Fructose',
+        'Sucrose',
+        'Lactose',
+        'Maltose'
+    ];
+    
+    searchInput.addEventListener('input', function() {
+        const inputValue = searchInput.value.trim().toLowerCase();
+        const filteredSuggestions = aiSuggestions.filter(suggestion => suggestion.toLowerCase().includes(inputValue));
+        
+        if (filteredSuggestions.length > 0) {
+            suggestionsContainer.style.display = 'block';
+            suggestionsContainer.style.top = `${searchInput.offsetTop + searchInput.offsetHeight}px`;
+            suggestionsContainer.style.left = `${searchInput.offsetLeft}px`;
+            
+            const suggestionsList = filteredSuggestions.map(suggestion => `<li>${suggestion}</li>`).join('');
+            suggestionsContainer.innerHTML = `<ul>${suggestionsList}</ul>`;
+            
+            // Add event listener to suggestions
+            const suggestionListItems = suggestionsContainer.querySelectorAll('li');
+            suggestionListItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    searchInput.value = item.textContent;
+                    suggestionsContainer.style.display = 'none';
+                });
+            });
+        } else {
+            suggestionsContainer.style.display = 'none';
+        }
+    });
+    
+    searchButton.addEventListener('click', function() {
+        const compoundName = searchInput.value.trim();
+        
+        if (compoundName) {
+            // Simulate fetching data from an API or database
+            fetchCompoundData(compoundName)
+                .then(data => {
+                    displayCompoundInfo(data);
+                })
+                .catch(error => {
+                    console.error('Error fetching compound data:', error);
+                    displayErrorMessage('Failed to fetch compound data.');
+                });
+        } else {
+            displayErrorMessage('Please enter a compound name.');
+        }
+    });
+
+    // Simulated function to fetch compound data
+    function fetchCompoundData(compoundName) {
+        // This should ideally be replaced with an actual API call
+        return new Promise((resolve, reject) => {
+            // Example data for demonstration
+            const compoundData = {
+                name: compoundName,
+                formula: 'C6H12O6', // Example formula
+                description: 'Example compound description.',
+                isomers: [
+                    { name: 'Isomer 1', formula: 'C6H12O6' },
+                    { name: 'Isomer 2', formula: 'C6H12O6' }
+                ]
+            };
+            
+            // Simulate API delay
+            setTimeout(() => {
+                resolve(compoundData);
+            }, 1000);
+        });
+    }
+
+    // Function to display compound information
+    function displayCompoundInfo(data) {
+        const resultContainer = document.getElementById('compound-results');
+        
+        if (!resultContainer) {
+            const container = document.createElement('div');
+            container.id = 'compound-results';
+            document.body.appendChild(container);
+        }
+        
+        const resultContainerElement = document.getElementById('compound-results');
+        resultContainerElement.innerHTML = `
+            <h2>Compound Information</h2>
+            <p><strong>Name:</strong> ${data.name}</p>
+            <p><strong>Formula:</strong> ${data.formula}</p>
+            <p><strong>Description:</strong> ${data.description}</p>
+            <h3>Isomers:</h3>
+            <ul>
+                ${data.isomers.map(isomer => `<li><strong>${isomer.name}</strong> - ${isomer.formula}</li>`).join('')}
+            </ul>
+        `;
+    }
+
+    // Function to display error messages
+    function displayErrorMessage(message) {
+        const resultContainer = document.getElementById('compound-results');
+        
+        if (!resultContainer) {
+            const container = document.createElement('div');
+            container.id = 'compound-results';
+            document.body.appendChild(container);
+        }
+        
+        const resultContainerElement = document.getElementById('compound-results');
+        resultContainerElement.innerHTML = `<p style="color: red;">${message}</p>`;
+    }
+</script>
+   <div class="header">
+        <nav>
+            <div class="logo">
+                <img src="images/36380703-528e-4a08-96c5-280c4ebbf2aa-removebg-preview.png">
+                <span>Browse Your Organic Compounds</span>
+    </div>
+    <ul>
+        <li class="links"><a href="#">Home</a></li>
+        <li><a href="#">Support</a></li>
+        <li><a href="#">Feature</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+        </nav>
+<center>
+        <div class="search-container">
+            <input type="text" id="compound-search" placeholder="Browse Organic Compounds...">
+            <button id="search-button">SEARCH</button>
+        </div>
+</center>
+        <div>
+            <aside>
+                <h2>Welcome!</h2>
+                <form>
+                    <label for="username/email">Username/Email</label><br><br>
+                    <input type="text" id="username" name="username"><br><br>
+                    <label for="Password">Password</label><br><br>
+                    <input type="<meta name="viewport" content="width=device-width, initial-scale=1.0"><password><br><br>
+                    <div>
+                        <a href="#" class="but"> Sign in</a><br><br>
+                        <p>Don't have an account<a href="#">Register</a></p>
+                    </div>
+                </form>
+            </aside>
+        </div>
+        <div class="content">
+            <h1>ORGANIC<br>CHEMISTRY</h1>
+            <p>Organic chemistry is the study of carbon compounds. Carbon compounds are found in plants and animals. <br>They contain elements like; carbon(which is present in all organic compounds),hydrogen,nitrogen,sulphur,halogens and some metals. <br>Organic compouunds that contain carbon and hydrogen only are called <strong>hydrocarbons</strong>.
+            </p>
+            <h2>Properties of Organic compounds</h2>
+            <pre>
+                1 They are covalent in nature.
+                2 Most of them are volatile(they vaporise easily when exposed to air).eg.petrol,diesel,toluene,methanol.etc
+                3 They are soluble in non-polar solvents. Although, some of them that have hydrogen bonds dissolve in water.eg.ethanol(C<sub>2</sub>H<sub>5</sub>OH).
+                4 They have low boiling and melting points.
+                5 They are flammable.ie.they catch fire easily.
+                6 They have lower reactivity than ionic compounds.
+            </pre>
+            <h2>Carbon's Unique Nature</h2>
+            <pre>
+                1 It's Tetravalency
+                2 It's ability to Catenate
+                3 It's ability to combine easily with; hydrogen,oxygen,nitrogen,sulphur and the halogens.
+                4 It's ability to form simple,double and triple bonds with its self and other atoms.
+            </pre>
+            <h2>Other Topics To Learn</h2>
+            <pre>
+                -Hybridization
+            </pre>
+            <center><h2>Homologous Series</h2></center>
+            <p>It is a family of organic compounds which follows a regular structural pattern, in which successive members of the series differ by -CH<sub>2</sub> or relative molecular mass of 14.</p>
+            <h3>Characteristics Of Homologous Series</h3>
+            <p>1 Members of the same homologous series have the same general molecular formula</p><br>
+               2 Each successive member ofthe series differ by -CH<sub>2</sub> group or relative molecular mass of 14.
+               <pre>
+                n   Prefix
+                1   Meth-
+                2   Eth-
+                3   Prop-
+                4   But-
+                5   Pent-
+                6   Hex-
+                7   Hept-
+                8   Oct-
+                9   Non-
+                10  Dec-
+                11  Undec-
+                12  Dodec-
+                13  Tridec-
+                20  Eico-<br><br>
+                Also, learn all about Hydrogen as an element by clicking on this link: <a href="https://en.wikipedia.org" target="_self">Learn about Hydrogen</a>
+               </pre><br>
+        </div>
+        <center><h2>Images</h2></center>
+            <div class="image-container">
+            <img src="images/Web image 1.jpg" alt="Structure of organic compounds" width="50px" height="50px">organic compounds structures</img>
+            <img src="images/Web image 2.png" width="200px" height="100px">Functional groups</img>
+            <img src="images/Web image 3.jfif">Functional groups</img>
+            <img src="images/Web image 4.png">Homologous Series</img>
+            <img src="images/Web image 5.jfif">Alkanoic acids<img>
+            <img src="images/36380703-528e-4a08-96c5-280c4ebbf2aa-removebg-preview.png"></img>
+            <img src="images/3645945.jpg"></img>
+            </div><br>
+            <div>
+            <div class="links">
+                <a href="https://chat.openai.com/chat" target="_self" class="btn">Learn more</a>
+                <a href="#">or contact</a>
+            </div>
+        </div><br><br>
+<center>
+<footer>Copyright 2025 by Ayodeji Michael Data</footer>
+</center>
+
+</body>
+</html>
