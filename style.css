@@ -6,7 +6,7 @@ style.css
     font-family: sans-serif;
 }
 .header{
-    width: device-width;
+    width: device-width, initial scale="1.0";
     height: 300vh;
     background-image: url(images\ \(1\).jpg); 
     background-position: center;
