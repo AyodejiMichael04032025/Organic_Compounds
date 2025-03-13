@@ -6,8 +6,8 @@ style.css
     font-family: sans-serif;
 }
 .header{
-    width: device-width initial scale=1.0;
-    height: 300vh;
+    width: 100%;
+    height: 100%;
     background-image: url(images\ \(1\).jpg); 
     background-position: center;
     background-size: cover;
