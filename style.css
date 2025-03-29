@@ -8,7 +8,7 @@ style.css
 .header{
     width: 100%;
     height: 100vh;
-    background-image: 0; 
+    background-image: rgb(0,0,0); 
     background-position: center;
     background-size: cover;
 }
