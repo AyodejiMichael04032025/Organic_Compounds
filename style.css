@@ -1,7 +1,7 @@
 style.css
 *{
     margin: 0;
-    padding:0;
+    padding: 0;
     box-sizing: border-box;
     font-family: sans-serif;
 }
@@ -49,7 +49,7 @@ nav:hover{
     font-weight: 500;
 }
 nav:hover ul li a{
-    color: #333
+    color: #333;
 }
 nav:hover .logo{
     color: #333;
