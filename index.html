@@ -3,20 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="keywords" content="Organic Compounds World">
-    <meta name="title" content="Website for Learning Organic Compounds">
+    <meta name="keywords" content="Organic Compounds">
+    <meta name="Website to Learn about Organic Chemistry" content="Website for browsing about organic compounds">
     <meta name="author" content="Ayodeji Michael">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Organic Compounds</title>
-    <link rel="stylesheet" href="style.css">
-    <style>
+    <link rel="stylesheet" href="style.css"><style>
         .image-container {
           display: flex;
           gap: 20px;
         }
+        body{
+            width: 100%;
+        }
         .image-container img {
-          max-width: 10%;
-          height: auto;
+          width: 10%;
+          height: 10%;
         }
       </style>
     
@@ -210,7 +212,7 @@
    <div class="header">
         <nav>
             <div class="logo">
-                <img src="36380703-528e-4a08-96c5-280c4ebbf2aa-removebg-preview.png" style="max-width: 20%; height: auto">
+                <img src="images/36380703-528e-4a08-96c5-280c4ebbf2aa-removebg-preview.png">
                 <span>Browse Your Organic Compounds</span>
     </div>
     <ul>
@@ -226,22 +228,24 @@
             <button id="search-button">SEARCH</button>
         </div>
 </center>
-        <div class="form" id="sign-up-form">
+        <div>
+            <aside>
                 <h2>Welcome!</h2>
                 <form>
                     <label for="username/email">Username/Email</label><br><br>
                     <input type="text" id="username" name="username"><br><br>
                     <label for="Password">Password</label><br><br>
-                    <input type="text"><password><br><br>
+                    <input type="text" id="password" name="password"><br><br>
                     <div>
                         <a href="#" class="but"> Sign in</a><br><br>
                         <p>Don't have an account<a href="#">Register</a></p>
                     </div>
                 </form>
+            </aside>
         </div>
         <div class="content">
             <h1>ORGANIC<br>CHEMISTRY</h1>
-            <p>Organic chemistry is the study of carbon compounds. Carbon compounds are found in plants and animals. <br>They contain elements like; carbon(which is present in all organic compounds),hydrogen,nitrogen,sulphur,halogens and some metals. <br>Organic compouunds that contain carbon and hydrogen only are called <strong>hydrocarbons</strong>.
+            <p>Organic chemistry is the study of carbon compounds. Carbon compounds are found in plants and animals. <br>They contain elements like; carbon(which is present in all organic compounds),hydrogen,nitrogen,sulphur,halogens and some metals. <br>Organic compounds that contain carbon and hydrogen only are called <strong>hydrocarbons</strong>.
             </p>
             <h2>Properties of Organic compounds</h2>
             <pre>
@@ -289,11 +293,11 @@
         </div>
         <center><h2>Images</h2></center>
             <div class="image-container">
-           <img src="images/Web image 1.jpg" alt="Structure of organic compounds" max-width="10%" height="auto" >organic compounds structures</img>
-            <img src="images/Web image 2.png" max-width="10%" height="auto">Functional groups</img>
-            <img src="images/Web image 3.jfif" max-width="10%" height="auto">Functional groups</img>
-            <img src="images/Web image 4.png" max-width="10%" height="auto">Homologous Series</img>
-            <img src="images/Web image 5.jfif" max-width="10%" height="auto">Alkanoic acids<img>
+            <img src="images/Web image 1.jpg" alt="Structure of organic compounds" width="50px" height="50px">organic compounds structures</img>
+            <img src="images/Web image 2.png" width="200px" height="100px">Functional groups</img>
+            <img src="images/Web image 3.jfif">Functional groups</img>
+            <img src="images/Web image 4.png">Homologous Series</img>
+            <img src="images/Web image 5.jfif">Alkanoic acids<img>
 
             </div><br>
             <div>
@@ -303,7 +307,7 @@
             </div>
         </div><br><br>
 <center>
-<footer> © 2025 by Ayodeji Michael Data</footer>
+<footer>Copyright 2025 by Ayodeji Michael Data</footer>
 </center>
 
 </body>
