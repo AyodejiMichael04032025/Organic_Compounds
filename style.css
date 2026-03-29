@@ -1,5 +1,6 @@
 style.css
 *{
+    background-image: url(Web image 1.jpg)
     margin: 0;
     padding:0;
     box-sizing: border-box;
@@ -8,7 +9,6 @@ style.css
 .header{
    width: 100%;
     height: 300vh;
-    background-image: url(Web image 1.jpg)
     background-position: center;
     background-size: cover;
 }
