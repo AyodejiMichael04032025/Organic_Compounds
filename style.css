@@ -1,0 +1,104 @@
+style.css
+* {
+    max-width: 100% !important;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    height: auto;
+}
+pre{
+    white-space: pre-line;
+    word-break: break-word;
+}
+.navbar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.80);
+    backdrop-filter: blur(5px);
+}
+.navheader{
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    background-color: white;
+}
+.navlink_toggle{
+    font-size: 32px !important;
+    color: black !important;
+    display: block;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1rem;
+    cursor: pointer;
+}
+.navlinks{
+    width: 100%;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+.navlinks a {
+    float: left;
+    color: black;
+    text-align: center;
+    padding: 1vw;
+    text-decoration-line: none;
+}
+.navlinks a:hover {
+    background-color: rgb(91, 142, 253);
+    color: white;
+}
+.navlinks.expanded{
+    position: 900;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background-color: white;
+    flex-direction: column;
+    padding: 1rem 2rem;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    white-space: normal;
+}
+.content{
+    width: 100%;
+    max-width: 100% !important;
+    background-color: rgba(0, 0, 0, 0.897);
+    border: 2px solid black;
+    border-radius: 3vw;
+    padding: 2vw 2vw;
+    color: #fff;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    min-width: 0;
+    hyphens: auto;
+}
+.content h1{
+    font-size: 7.5vw;
+    line-height: 7.5vw;
+    font-weight: 500;
+}
+.links a{
+    color: #fff;
+    text-decoration: none;
+    display: inline-block;
+}
+h2{
+    font-size: 2.5vw;
+}
+.searchbutton{  border: 2px solid #fff;
+    padding: 10px 35px;
+    border-radius: 15px;
+    text-decoration: #ffffff00;
+}
+/** For Search Bar **/
+.search-container{
+    background-color: rgba(255, 255, 255, 0.90);
+}
+#compound-search{
+    width: 50%;
+}
+
+
