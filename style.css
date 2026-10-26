@@ -1,9 +1,11 @@
 style.css
 * {
-    max-width: 100% !important;
-    box-sizing: border-box;
+    width: clamp(100%, 100%, 100%) !important;
     font-family: sans-serif;
     height: auto;
+}
+body{
+    background-color: white;
 }
 pre{
     white-space: pre-line;
@@ -11,6 +13,7 @@ pre{
 }
 .navbar{
     position: sticky;
+    width: 100%;
     top: 0;
     left: 0;
     right: 0;
@@ -37,7 +40,7 @@ pre{
 .navlinks{
     width: 100%;
     overflow: hidden;
-    background-color: white;
+    background-color: rgb(91, 142, 253);
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 .navlinks a {
@@ -51,12 +54,22 @@ pre{
     background-color: rgb(91, 142, 253);
     color: white;
 }
+.navlinks a:active{
+    background-color: rgb(91, 142, 253);
+    color: blueviolet;
+}
+.navlinks a:current{
+    background-color: rgb(91, 142, 253);
+    color: darkblue;
+}
 .navlinks.expanded{
     position: 900;
     top: 100%;
     left: 0;
-    width: 90%;
+    width: 25%;
+    height: auto;
     background-color: white;
+    display: flex;
     flex-direction: column;
     padding: 1rem 2rem;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
@@ -65,7 +78,7 @@ pre{
 .content{
     width: 100%;
     max-width: 100% !important;
-    background-color: rgba(0, 0, 0, 0.897);
+    background-color: grey;
     border: 2px solid black;
     border-radius: 3vw;
     padding: 2vw 2vw;
@@ -97,8 +110,23 @@ h2{
 .search-container{
     background-color: rgba(255, 255, 255, 0.90);
 }
+.search-container input {
+    border: 1px solid black;
+    border-radius: 5px;
+    height: 3vw;
+}
 #compound-search{
     width: 50%;
 }
-
-
+.login-form {
+    width: clamp(40vw, 300px,300px);
+    background-color: grey;
+    border: 2px solid black;
+    border-radius: 3vw;
+    padding: 2vw 2vw;
+    color: #fff;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    min-width: 0;
+    hyphens: auto;
+}
