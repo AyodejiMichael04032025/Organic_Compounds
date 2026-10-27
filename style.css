@@ -7,6 +7,11 @@ style.css
 body{
     background-color: white;
 }
+#navbar_container {
+    position: sticky;
+    width=100%;
+    z-index: 1000;
+}
 pre{
     white-space: pre-line;
     word-break: break-word;
