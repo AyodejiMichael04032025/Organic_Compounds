@@ -38,10 +38,17 @@ pre{
     cursor: pointer;
 }
 .navlinks{
-    width: 100%;
-    overflow: hidden;
+    display: flex;
+    width: 100% ;
+    max-width: 100% !important;
+    box-sizing: border-box;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+    white-space: nowrap;
     background-color: rgb(91, 142, 253);
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+    -webkit-overflow-scrolling: touch;
 }
 .navlinks a {
     float: left;
@@ -62,23 +69,10 @@ pre{
     background-color: rgb(91, 142, 253);
     color: darkblue;
 }
-.navlinks.expanded{
-    position: 900;
-    top: 100%;
-    left: 0;
-    width: 25%;
-    height: auto;
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    padding: 1rem 2rem;
-    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-    white-space: normal;
-}
 .content{
     width: 100%;
     max-width: 100% !important;
-    background-color: grey;
+    background-color: black;
     border: 2px solid black;
     border-radius: 3vw;
     padding: 2vw 2vw;
@@ -129,4 +123,37 @@ h2{
     overflow-wrap: break-word;
     min-width: 0;
     hyphens: auto;
+}
+#menu_button {
+    border: none;
+    font-size: 24px;
+    font-weight: bold;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+}
+/** The Overlay Tab **/
+#menu_overlay {
+    display: none !important;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    backdrop-filter: blur(5px);
+    z-index: 2000;
+    box-sizing: border-box;
+    padding: 2vw;
+    flex-direction: column;
+}
+#menu_overlay.active {
+    display: flex !important;
+}
+#close_button_for_menu_overlay {
+    align-self: flex-end;
+    font-size: 2 rem;
+    cursor: pointer;
+    color: #333;
+    line-height: 1;
 }
