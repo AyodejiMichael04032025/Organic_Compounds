@@ -6,10 +6,13 @@ style.css
 }
 body{
     background-color: white;
+    height: auto;
 }
 #navbar_container {
     position: sticky;
-    width=100%;
+    top: 0;
+    left: 0;
+    width:100%;
     z-index: 1000;
 }
 pre{
