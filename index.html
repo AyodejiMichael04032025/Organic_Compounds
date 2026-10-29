@@ -10,13 +10,15 @@
     <title>Organic Compounds</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="images/logo.png">
+    <script src="navbar-menu_overlay.js"></script>
     <style>
         .image-container {
             border: 2px solid black;
             border-radius: 3vw;
-            width: clamp(0, 90%, 90%);
+            width: clamp(0, auto, 90%);
             display: flex;
             flex-wrap: wrap;
+            flex-direction: Column;
             margin: 5%;
         }
         .image-container img {
@@ -30,8 +32,7 @@
 
 </head>
 <body>
-    <script src="navbar-menu_overlay.js"></script>
-    <div id="navbar_container"></div>
+    <div id="navbar_container"></div><br>
     <div class="content">
         <h1>Brief Introduction To Organic Chemistry</h1>
         <p>Organic Chemistry is the study of carbon compounds.Carbon compounds are found in plants and animals. <br>
@@ -78,25 +79,23 @@
                 20  Eico-<br><br>
     <center>
             <p>Have questions about the lessons, speak with our AI TutorBot</p>
-            <a href="TutorBot.html" style="box-sizing: border-box; border-radius: 3vw;"> Chat with AI model</a>
+            <a href="tutorbot.html" style="box-sizing: border-box; border-radius: 3vw;"> Chat with AI model</a>
     </center>
     </div>
-        <center><h2>Images</h2></center>
             <div class="image-container">
-            <img src="images/Web image 1.jpg" alt="Structure of organic compounds">organic compounds structures</img>
-            <img src="images/Web image 2.png">Functional groups</img>
-            <img src="images/Web image 3.jfif">Functional groups</img>
-            <img src="images/Web image 4.png">Homologous Series</img>
-            <img src="images/Web image 5.jfif">Alkanoic acids<img>
+                <center><h2>Images</h2></center>
+                <img src="images/Web image 1.jpg" alt="Structure of organic compounds">organic compounds structures</img>
+                <img src="images/Web image 2.png">Functional groups</img>
+                <img src="images/Web image 3.jfif">Functional groups</img>
+                <img src="images/Web image 4.png">Homologous Series</img>
+                <img src="images/Web image 5.jfif">Alkanoic acids<img><br>
             </div> <br>
-            <div>
+        <div>
             <div class="links">
                 <a href="https://chat.openai.com/chat" target="_self" class="btn">Learn more</a>
                 <a href="#">or contact</a>
             </div>
         </div><br><br>
-<center>
-        <footer>© 2026 by Ayodeji Michael Data</footer>
-</center>
+    <div id="footer_container"></div>
 </body>
 </html>
