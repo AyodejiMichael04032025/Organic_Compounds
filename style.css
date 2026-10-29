@@ -86,6 +86,7 @@ pre{
     padding: 2vw 2vw;
     color: #fff;
     box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     overflow-wrap: break-word;
     min-width: 0;
     hyphens: auto;
@@ -100,9 +101,7 @@ pre{
     text-decoration: none;
     display: inline-block;
 }
-h2{
-    font-size: 2.5vw;
-}
+
 .searchbutton{  border: 2px solid #fff;
     padding: 10px 35px;
     border-radius: 15px;
@@ -110,19 +109,20 @@ h2{
 }
 /** For Search Bar **/
 .search-container{
-    background-color: rgba(255, 255, 255, 0.90);
+    background: none;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 .search-container input {
     border: 1px solid black;
     border-radius: 5px;
-    height: 3vw;
+    height: 20px;
 }
 #compound-search{
     width: 50%;
 }
 .login-form {
     width: clamp(40vw, 300px,300px);
-    background-color: grey;
+    background-color: black;
     border: 2px solid black;
     border-radius: 3vw;
     padding: 2vw 2vw;
@@ -131,6 +131,7 @@ h2{
     overflow-wrap: break-word;
     min-width: 0;
     hyphens: auto;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 #menu_button {
     border: none;
@@ -160,8 +161,49 @@ h2{
 }
 #close_button_for_menu_overlay {
     align-self: flex-end;
-    font-size: 2 rem;
+    font-size: 3 rem;
     cursor: pointer;
     color: #333;
     line-height: 1;
+    background: none;
+}
+
+/** Footer Styling **/
+.footer_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto 40px auto;
+}
+
+.footer_column ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer_column li {
+  margin-bottom: 4px;
+}
+
+.footer_column a, .footer_bottom a {
+  color: #616161;
+  text-decoration: none;
+}
+
+.footer_column a:hover, .footer_bottom a:hover {
+  text-decoration: underline;
+  color: blue;
+}
+.footer_bottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  border-top: 1px solid #ddd;
+  padding-top: 20px;
+  gap: 15px;
 }
