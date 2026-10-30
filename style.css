@@ -35,16 +35,6 @@ pre{
     justify-content: stretch;
     background-color: white;
 }
-.navlink_toggle{
-    font-size: 32px !important;
-    color: black !important;
-    display: block;
-    background: none;
-    border: none;
-    color: white;
-    font-size: 1rem;
-    cursor: pointer;
-}
 .navlinks{
     display: flex;
     width: 100% ;
@@ -80,21 +70,16 @@ pre{
 .content{
     width: 100%;
     max-width: 100% !important;
-    background-color: black;
-    border: 2px solid black;
+    background-color: white;
+    border: 2px;
     border-radius: 3vw;
     padding: 2vw 2vw;
-    color: #fff;
+    color: black;
     box-sizing: border-box;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     overflow-wrap: break-word;
     min-width: 0;
     hyphens: auto;
-}
-.content h1{
-    font-size: 7.5vw;
-    line-height: 7.5vw;
-    font-weight: 500;
 }
 .links a{
     color: #fff;
@@ -108,17 +93,15 @@ pre{
     text-decoration: #ffffff00;
 }
 /** For Search Bar **/
-.search-container{
+.search_container{
     background: none;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
-.search-container input {
+.search_container input {
     border: 1px solid black;
     border-radius: 5px;
     height: 20px;
-}
-#compound-search{
-    width: 50%;
+    width: 60vw;
 }
 .login-form {
     width: clamp(40vw, 300px,300px);
@@ -155,6 +138,14 @@ pre{
     box-sizing: border-box;
     padding: 2vw;
     flex-direction: column;
+}
+#menu_overlay a {
+    color: black;
+    text-decoration: none;
+}
+#menu_overlay a:hover {
+    color: blue;
+    text-decoration: underline;
 }
 #menu_overlay.active {
     display: flex !important;
@@ -206,4 +197,23 @@ pre{
   border-top: 1px solid #ddd;
   padding-top: 20px;
   gap: 15px;
+}
+/** I mage Container for homepage **/
+.image_container {
+    border: 2px;
+    border-radius: 3vw;
+    width: clamp(0, auto, 90%);
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: Column;
+    margin: 5%;
+    align-items: center;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+.image_container img {
+    border: 1px black;
+    border-radius: 3vw;
+    width: 30%;
+    height: auto;
 }
