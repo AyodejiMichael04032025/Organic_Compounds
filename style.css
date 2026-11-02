@@ -1,6 +1,5 @@
 style.css
 * {
-    width: clamp(100%, 100%, 100%) !important;
     font-family: sans-serif;
     height: auto;
 }
@@ -47,6 +46,11 @@ pre{
     background-color: rgb(91, 142, 253);
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
     -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    
+}
+.navlinks::-webkit-scrollbar {
+    display: none;
 }
 .navlinks a {
     float: left;
@@ -67,6 +71,7 @@ pre{
     background-color: rgb(91, 142, 253);
     color: darkblue;
 }
+/** Page contents */
 .content{
     width: 100%;
     max-width: 100% !important;
@@ -87,35 +92,91 @@ pre{
     display: inline-block;
 }
 
-.searchbutton{  border: 2px solid #fff;
-    padding: 10px 35px;
-    border-radius: 15px;
-    text-decoration: #ffffff00;
-}
 /** For Search Bar **/
 .search_container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     background: none;
+    box-sizing: border-box;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px black;
+    border-radius: 30px;
+    padding: 8px 12px;
+    background-color: white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 .search_container input {
-    border: 1px solid black;
+    border: 1px black;
+    outline: none;
     border-radius: 5px;
-    height: 20px;
-    width: 60vw;
+    height: 5vw;
 }
-.login-form {
-    width: clamp(40vw, 300px,300px);
-    background-color: black;
-    border: 2px solid black;
+#search_button {    
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: rgb(91, 142, 253);
+    width: 50px;
+    height: 1.5rem;
+    font-size: 0.5rem;
+}
+
+/** For signin.html and login.html **/
+#login-signin-body{
+    background-image: url(images/36380703-528e-4a08-96c5-280c4ebbf2aa-removebg-preview.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#login_form, #signin_form{
+    width: clamp(40vw, 300px,90vw);
+    background-color: white;
+    border: 2px black;
     border-radius: 3vw;
     padding: 2vw 2vw;
-    color: #fff;
+    color: black;
     box-sizing: border-box;
-    overflow-wrap: break-word;
     min-width: 0;
-    hyphens: auto;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
+#login_links a, #signin_links a {
+    width: 15%;
+    height: auto;
+    border: 1px solid rgb(91, 142, 253);
+    border-radius: 10px;
+}
+#login_links img, #signin_links img {
+    width: 90%;
+    height: auto;
+    border: 1px black;
+    border-radius: 10px;
+}
+#login_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+#login_form input, #signin_form input {
+    width: 80%;
+    height: auto;
+    object-fit: cover;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+#login_button, #signin_button{
+    background-color: rgb(91, 142, 253);
+    cursor: pointer;
+    width: 80%;
+    border: 1px black;
+    border-radius: 5px;
+}
+
+/** Menu Button **/
 #menu_button {
     border: none;
     font-size: 24px;
@@ -147,6 +208,9 @@ pre{
     color: blue;
     text-decoration: underline;
 }
+#menu_overlay a:active {
+    color: red;
+}
 #menu_overlay.active {
     display: flex !important;
 }
@@ -160,6 +224,10 @@ pre{
 }
 
 /** Footer Styling **/
+#footer{
+    background-color: white;
+    width: 100%;
+}
 .footer_grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
@@ -198,14 +266,14 @@ pre{
   padding-top: 20px;
   gap: 15px;
 }
-/** I mage Container for homepage **/
+/** Image Container for homepage **/
 .image_container {
     border: 2px;
     border-radius: 3vw;
     width: clamp(0, auto, 90%);
     display: flex;
     flex-wrap: wrap;
-    flex-direction: Column;
+    flex-direction: column;
     margin: 5%;
     align-items: center;
     text-align: center;
@@ -216,4 +284,85 @@ pre{
     border-radius: 3vw;
     width: 30%;
     height: auto;
+}
+/** Horizontal Rule with text in Log-In tab, see login.html and check he div with id=login_form **/
+.divider {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin: 28px 0;
+}
+
+/* The left and right 1px lines */
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #444; /* Razor-thin 1px line */
+}
+
+.divider::before {
+  margin-right: 15px;
+}
+
+.divider::after {
+  margin-left: 15px;
+}
+
+/* The protected text box */
+.divider span {
+  color: #888;
+  font-size: 14px;
+  /* No background color needed, no absolute positioning, just pure text */
+}
+/** For tutorbot.html **/
+#tutorbot_chat_tab {
+    width: clamp(40vw, 80vw, 90vw);
+    border: 2px black;
+    border-radius: 20px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+#tutorbot_chat_bar {
+    box-sizing: border-box;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    border: 1px black;
+    border-radius: 30px;
+    padding: 8px 12px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+}
+
+#tutorbot_chat_bar textarea {
+    flex: 1;
+    resize: none;
+    outline: none;
+    line-height: 1.0;
+    max-height: 200px;
+    overflow-y: auto;
+    border: none;
+    color: black;
+    resize: none;
+    outline: none;
+    font-family: inherit;
+}
+#tutorbot_chat_bar textarea::-webkit-scrollbar {
+    display: none;
+}
+
+#tutorbot_chat_bar button {
+    font-size: 2rem;
+    background: 0;
+    border: none;
+    color: black;
+    border-radius: 50%;
+    width: 32px;
+    height: 32px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
 }
