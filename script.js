@@ -59,3 +59,37 @@ fetch('fetch.html')
     }
     })
   .catch(error => console.error('Error loading navbar:', error));
+  /*Placeholder Animation */
+document.addEventListener("DOMContentLoaded", () => {
+  const tutorbotinput = document.getElementById("tutorbot_input");
+  const words = ["Ask anything...", "Need help with naming compounds?...", "Wanna hear some organic chemistry facts?..."];
+  let wordIndex = 0, charIndex = 0, isDeleting = false;
+
+  function type() {
+    const currentWord = words[wordIndex];
+    
+    // Set placeholder to a slice of the current word
+    tutorbotinput.placeholder = currentWord.substring(0, charIndex);
+
+    if (!isDeleting) {
+      charIndex++;
+      if (charIndex > currentWord.length) {
+        isDeleting = true;
+        setTimeout(type, 1500); // Pause when word is fully typed
+        return;
+      }
+    } else {
+      charIndex--;
+      if (charIndex === 0) {
+        isDeleting = false;
+        wordIndex = (wordIndex + 1) % words.length; // Move to next word
+        setTimeout(type, 500); // Pause before next word starts typing
+        return;
+      }
+    }
+
+    setTimeout(type, isDeleting ? 50 : 100); // Faster when deleting
+  }
+
+  type();
+});
