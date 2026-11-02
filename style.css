@@ -105,25 +105,33 @@ pre{
     gap: 8px;
     border: 1px black;
     border-radius: 30px;
-    padding: 8px 12px;
+    padding: 5px 5px;
+    margin: 3px 3px;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 .search_container input {
+    min-width: 0;
+    box-sizing: border-box;
+    margin: 2px 2px;
     border: 1px black;
     outline: none;
     border-radius: 5px;
-    height: 3vw;
+    height: 26px;
 }
 #search_button {    
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    margin: 2px 2px;
     border: 1px solid black;
     border-radius: 20px;
     background-color: rgb(91, 142, 253);
-    width: 50px;
-    height: 2vw;
-    font-size: 0.5rem;
+    width: auto;
+    height: 20px;
+    font-size: 0.7rem;
+    cursor: pointer;
 }
-
 /** For signin.html and login.html **/
 #login-signin-body{
     background-image: url(images/36380703-528e-4a08-96c5-280c4ebbf2aa-removebg-preview.png);
