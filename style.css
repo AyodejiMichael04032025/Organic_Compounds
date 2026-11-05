@@ -113,7 +113,7 @@ pre{
 .search_container input {
     background: none;
     min-width: 0;
-    width: clamp(0, 90%,80%);
+    width: clamp(0, 80%, 80%);
     box-sizing: border-box;
     margin: 2px 2px;
     border: 1px black;
