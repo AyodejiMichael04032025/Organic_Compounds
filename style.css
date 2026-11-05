@@ -111,7 +111,9 @@ pre{
     box-shadow: 0 4px 6px rgba(0,0,0,0.3);
 }
 .search_container input {
+    background: none;
     min-width: 0;
+    width: clamp(0, 90%,80%);
     box-sizing: border-box;
     margin: 2px 2px;
     border: 1px black;
