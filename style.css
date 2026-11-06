@@ -159,14 +159,16 @@ pre{
 #login_links a, #signin_links a {
     border: 1px solid rgb(91, 142, 253);
     width: 15%;
-    height: auto;
+    aspect-ratio: 1;
     border-radius: 10px;
     display: flex;
     align-items: center;
+    justify-content: center;
 }
 #login_links img, #signin_links img {
-    width: 90%;
-    height: auto;
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
     border: 1px black;
     border-radius: 10px;
 }
