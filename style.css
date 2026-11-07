@@ -189,6 +189,7 @@ pre{
     background-color: rgb(91, 142, 253);
     cursor: pointer;
     width: 80%;
+    height: 20px;
     border: 1px black;
     border-radius: 5px;
 }
