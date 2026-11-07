@@ -180,7 +180,7 @@ pre{
 }
 #login_form input, #signin_form input {
     width: 80%;
-    height: auto;
+    height: 20px;
     object-fit: cover;
     border: 1px solid black;
     border-radius: 5px;
